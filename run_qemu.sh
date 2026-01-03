@@ -38,7 +38,7 @@ OVMF_CODE="/usr/share/OVMF/OVMF_CODE.fd"
 usage() {
   cat <<EOF
 Usage:
-  ./run.sh [command]
+  ./run_qemu.sh [command]
 
 Commands:
   deps      Install build dependencies (Ubuntu/Debian: apt). Uses sudo if needed.
@@ -311,7 +311,7 @@ build_all() {
 run_qemu() {
   local bz="$WORK/linux-$KVER/arch/x86/boot/bzImage"
   if [[ ! -f "$bz" || ! -f "$CPIO_GZ" ]]; then
-    echo "[-] Missing artifacts. Run: ./run.sh build" >&2
+    echo "[-] Missing artifacts. Run: ./run_qemu.sh build" >&2
     exit 1
   fi
 
@@ -334,7 +334,7 @@ create_uefi_disk() {
   local initrd="$CPIO_GZ"
   
   if [[ ! -f "$kernel" || ! -f "$initrd" ]]; then
-    echo "[-] Missing kernel or initrd. Run: ./run.sh build" >&2
+    echo "[-] Missing kernel or initrd. Run: ./run_qemu.sh build" >&2
     exit 1
   fi
 
