@@ -1,3 +1,4 @@
+```text
 Usage:
   ./run.sh [command]
 
