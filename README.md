@@ -1,6 +1,6 @@
 ```text
 Usage:
-  ./run.sh [command]
+  ./run_qemu.sh [command]
 
 Commands:
   deps      Install build dependencies (Ubuntu/Debian: apt). Uses sudo if needed.
